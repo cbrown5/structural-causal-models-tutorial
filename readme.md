@@ -4,9 +4,9 @@
 
 Welcome to our "Introduction to structural causal modelling" R course site. Below are instructions for getting setup or jump straight to the notes and data.
 
-### [Course notes](http://www.seascapemodels.org/RLS-data-prep-course/2020-07-29-ConservationHackers-data-wrangling-course.html)
+### [Course notes](http://www.seascapemodels.org/structural-causal-models-tutorial/scm-tute.html)
 
-### [Data for course](https://github.com/cbrown5/RLS-data-prep-course/blob/master/data-raw/data-raw.zip)
+### [Data for course](https://github.com/cbrown5/structural-causal-models-tutorial/blob/main/data/Kings-multistressor-experiment.csv)
 
 
 ## Setup
