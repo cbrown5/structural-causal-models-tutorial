@@ -18,7 +18,7 @@ A/Prof Christopher J. Brown
 
 This is a workshop on structural causal modelling. It is designed to be run alone, or paired with a course on generalized linear models. It is designed to take about 1/2 a day to teach. The examples are drawn from ecology and conservation science, but the theory is applicable to any science, particularly if it is using observational data (rather than controlled experiments).
 
-Before starting you will need to **\[download this data\](TODO)**.
+Before starting you will need to [**download this data**](https://github.com/cbrown5/structural-causal-models-tutorial/blob/main/data/Kings-multistressor-experiment.csv).
 
 You will need to install these R packages: `dagitty`, `tidyverse`, `ggdag`:
 
@@ -118,11 +118,11 @@ Our question here is how do diuron and light interact to affect fluorescence and
 
 Variables in the dataset are: Time of measurement, Light level, Diuron level, experimental Block, t0 (density at time zero), lncelld (log of cell density), and PI (related to fluorescence). See [King's paper](https://royalsocietypublishing.org/doi/10.1098/rspb.2022.0348) and supplemental material for the original data and metadata.
 
-Watch more about the experiment here:
+Watch more [about the experiment](https://www.youtube.com/watch?v=BA3wGE-0K8g)
 
-```         
-{{< video https://www.youtube.com/watch?v=BA3wGE-0K8g >}}
-```
+<iframe src="https://www.youtube.com/embed/BA3wGE-0K8g" data-external="1">
+
+</iframe>
 
 ### Step 1 Define a conceptual model (a DAG)
 
@@ -990,7 +990,7 @@ Model selection in DAG land is about considering different models. You might hav
 
 So I encourage you to consider multiple models.
 
-SCM can also be used to study outcomes of interventions. It lets you ask the counterfactual question: what would have happened if we didn't do this (make an MPA, have a TAC, sign up for sustainability certification etc...). [In this way SCM is related to matching designs that are becoming increasingly popular in conservation studies](A guide to quasi-experimental approaches in ecology including backdoor and frontdoor criteria](https://doi.org/10.1002/ecs2.4009)
+SCM can also be used to study outcomes of interventions. It lets you ask the counterfactual question: what would have happened if we didn't do this (make an MPA, have a TAC, sign up for sustainability certification etc...). \[In this way SCM is related to matching designs that are becoming increasingly popular in conservation studies\](A guide to quasi-experimental approaches in ecology including backdoor and frontdoor criteria\](https://doi.org/10.1002/ecs2.4009)
 
 **The best thing about SCM is it allows you to talk causally about your analyses.** No more beating around the bush with the weak language of 'associations'.
 
