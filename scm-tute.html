@@ -63,18 +63,64 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="scm-tute_files/libs/quarto-html/tippy.umd.min.js"></script>
 <script src="scm-tute_files/libs/quarto-html/anchor.min.js"></script>
 <link href="scm-tute_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="scm-tute_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="scm-tute_files/libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="scm-tute_files/libs/bootstrap/bootstrap.min.js"></script>
 <link href="scm-tute_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="scm-tute_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="scm-tute_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="dark">
 
 
 </head>
 
-<body class="fullcontent">
+<body>
 
 <div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
-
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Navigation</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">1</span> Introduction</a>
+  <ul class="collapse">
+  <li><a href="#what-you-need" id="toc-what-you-need" class="nav-link" data-scroll-target="#what-you-need"><span class="header-section-number">1.1</span> What you need</a></li>
+  <li><a href="#why-do-we-need-stuctural-causal-modelling" id="toc-why-do-we-need-stuctural-causal-modelling" class="nav-link" data-scroll-target="#why-do-we-need-stuctural-causal-modelling"><span class="header-section-number">1.2</span> Why do we need stuctural causal modelling?</a></li>
+  <li><a href="#correlation-is-causation-with-some-conditions" id="toc-correlation-is-causation-with-some-conditions" class="nav-link" data-scroll-target="#correlation-is-causation-with-some-conditions"><span class="header-section-number">1.3</span> Correlation is causation, with some conditions</a></li>
+  </ul></li>
+  <li><a href="#scm-101" id="toc-scm-101" class="nav-link" data-scroll-target="#scm-101"><span class="header-section-number">2</span> SCM 101</a></li>
+  <li><a href="#first-example" id="toc-first-example" class="nav-link" data-scroll-target="#first-example"><span class="header-section-number">3</span> First example</a>
+  <ul class="collapse">
+  <li><a href="#step-1-define-a-conceptual-model-a-dag" id="toc-step-1-define-a-conceptual-model-a-dag" class="nav-link" data-scroll-target="#step-1-define-a-conceptual-model-a-dag"><span class="header-section-number">3.1</span> Step 1 Define a conceptual model (a DAG)</a></li>
+  <li><a href="#step-2-choose-a-statistical-test" id="toc-step-2-choose-a-statistical-test" class="nav-link" data-scroll-target="#step-2-choose-a-statistical-test"><span class="header-section-number">3.2</span> Step 2 Choose a statistical test</a></li>
+  <li><a href="#step-3-test-consistency-of-your-conceptual-model-with-your-data-optional" id="toc-step-3-test-consistency-of-your-conceptual-model-with-your-data-optional" class="nav-link" data-scroll-target="#step-3-test-consistency-of-your-conceptual-model-with-your-data-optional"><span class="header-section-number">3.3</span> Step 3 Test consistency of your conceptual model with your data (optional)</a></li>
+  <li><a href="#step-4-identify-confounding-variables-of-you-need-to-adjust-for-when-testing-the-cause-of-interest" id="toc-step-4-identify-confounding-variables-of-you-need-to-adjust-for-when-testing-the-cause-of-interest" class="nav-link" data-scroll-target="#step-4-identify-confounding-variables-of-you-need-to-adjust-for-when-testing-the-cause-of-interest"><span class="header-section-number">3.4</span> Step 4 Identify confounding variables of you need to adjust for when testing the cause of interest</a></li>
+  <li><a href="#step-5-test-for-causality-with-your-statistical-test" id="toc-step-5-test-for-causality-with-your-statistical-test" class="nav-link" data-scroll-target="#step-5-test-for-causality-with-your-statistical-test"><span class="header-section-number">3.5</span> Step 5 Test for causality with your statistical test</a></li>
+  <li><a href="#step-6-repeat-for-other-causes" id="toc-step-6-repeat-for-other-causes" class="nav-link" data-scroll-target="#step-6-repeat-for-other-causes"><span class="header-section-number">3.6</span> Step 6 repeat for other causes</a></li>
+  </ul></li>
+  <li><a href="#break-for-diy-dag-session" id="toc-break-for-diy-dag-session" class="nav-link" data-scroll-target="#break-for-diy-dag-session"><span class="header-section-number">4</span> Break for DIY DAG session</a></li>
+  <li><a href="#more-on-using-dags-to-identify-causal-tests" id="toc-more-on-using-dags-to-identify-causal-tests" class="nav-link" data-scroll-target="#more-on-using-dags-to-identify-causal-tests"><span class="header-section-number">5</span> More on using DAGs to identify causal tests</a>
+  <ul class="collapse">
+  <li><a href="#how-manipulative-experiments-work-to-infer-causality" id="toc-how-manipulative-experiments-work-to-infer-causality" class="nav-link" data-scroll-target="#how-manipulative-experiments-work-to-infer-causality"><span class="header-section-number">5.1</span> How manipulative experiments work to infer causality</a></li>
+  <li><a href="#confounding" id="toc-confounding" class="nav-link" data-scroll-target="#confounding"><span class="header-section-number">5.2</span> Confounding</a></li>
+  <li><a href="#an-urchin-case-study" id="toc-an-urchin-case-study" class="nav-link" data-scroll-target="#an-urchin-case-study"><span class="header-section-number">5.3</span> An urchin case-study</a></li>
+  <li><a href="#statistical-control-applied-to-a-field-study" id="toc-statistical-control-applied-to-a-field-study" class="nav-link" data-scroll-target="#statistical-control-applied-to-a-field-study"><span class="header-section-number">5.4</span> Statistical control applied to a field study</a></li>
+  <li><a href="#algorithms-for-identifying-adjustment-sets" id="toc-algorithms-for-identifying-adjustment-sets" class="nav-link" data-scroll-target="#algorithms-for-identifying-adjustment-sets"><span class="header-section-number">5.5</span> Algorithms for identifying adjustment sets</a></li>
+  <li><a href="#missing-data" id="toc-missing-data" class="nav-link" data-scroll-target="#missing-data"><span class="header-section-number">5.6</span> Missing data</a></li>
+  <li><a href="#other-algorithms-for-identifying-adjustment-sets" id="toc-other-algorithms-for-identifying-adjustment-sets" class="nav-link" data-scroll-target="#other-algorithms-for-identifying-adjustment-sets"><span class="header-section-number">5.7</span> Other algorithms for identifying adjustment sets</a></li>
+  <li><a href="#colliders" id="toc-colliders" class="nav-link" data-scroll-target="#colliders"><span class="header-section-number">5.8</span> Colliders</a></li>
+  <li><a href="#m-bias" id="toc-m-bias" class="nav-link" data-scroll-target="#m-bias"><span class="header-section-number">5.9</span> M bias</a></li>
+  </ul></li>
+  <li><a href="#application-of-generalized-linear-models-in-scm" id="toc-application-of-generalized-linear-models-in-scm" class="nav-link" data-scroll-target="#application-of-generalized-linear-models-in-scm"><span class="header-section-number">6</span> Application of generalized linear models in SCM</a>
+  <ul class="collapse">
+  <li><a href="#gaussian-glm---urchin-larvae" id="toc-gaussian-glm---urchin-larvae" class="nav-link" data-scroll-target="#gaussian-glm---urchin-larvae"><span class="header-section-number">6.1</span> Gaussian GLM - urchin larvae</a></li>
+  <li><a href="#poisson-glm---urchin-abundance" id="toc-poisson-glm---urchin-abundance" class="nav-link" data-scroll-target="#poisson-glm---urchin-abundance"><span class="header-section-number">6.2</span> Poisson GLM - urchin abundance</a></li>
+  <li><a href="#binomial-glm---kelp" id="toc-binomial-glm---kelp" class="nav-link" data-scroll-target="#binomial-glm---kelp"><span class="header-section-number">6.3</span> Binomial GLM - Kelp</a></li>
+  <li><a href="#collider-example---effect-of-temp-on-urchins" id="toc-collider-example---effect-of-temp-on-urchins" class="nav-link" data-scroll-target="#collider-example---effect-of-temp-on-urchins"><span class="header-section-number">6.4</span> Collider example - effect of Temp on urchins</a></li>
+  <li><a href="#confounding-example---direct-effect-of-temp" id="toc-confounding-example---direct-effect-of-temp" class="nav-link" data-scroll-target="#confounding-example---direct-effect-of-temp"><span class="header-section-number">6.5</span> Confounding example - direct effect of Temp</a></li>
+  </ul></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="header-section-number">7</span> Summary</a></li>
+  <li><a href="#further-reading" id="toc-further-reading" class="nav-link" data-scroll-target="#further-reading"><span class="header-section-number">8</span> Further reading</a></li>
+  </ul>
+</nav>
+</div>
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
@@ -94,16 +140,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<section id="introduction-to-structural-causal-modelling" class="level2">
-<h2 class="anchored" data-anchor-id="introduction-to-structural-causal-modelling">Introduction to structural causal modelling</h2>
+<div style="color: #9966ff;">
 <p>A/Prof Christopher J. Brown</p>
+</div>
 <p><em>Institute for Marine and Antarctic Studies, University of Tasmania, Australia</em></p>
 <p>2023-06-30</p>
-</section>
-<section id="introduction" class="level2">
-<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
-<section id="what-you-need" class="level3">
-<h3 class="anchored" data-anchor-id="what-you-need">What you need</h3>
+<section id="introduction" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">1</span> Introduction</h2>
+<section id="what-you-need" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="what-you-need"><span class="header-section-number">1.1</span> What you need</h3>
 <p>This is a workshop on structural causal modelling. It is designed to be run alone, or paired with a course on generalized linear models. It is designed to take about 1/2 a day to teach. The examples are drawn from ecology and conservation science, but the theory is applicable to any science, particularly if it is using observational data (rather than controlled experiments).</p>
 <p>Before starting you will need to <a href="https://github.com/cbrown5/structural-causal-models-tutorial/blob/main/data/Kings-multistressor-experiment.csv"><strong>download this data</strong></a>.</p>
 <p>You will need to install these R packages: <code>dagitty</code>, <code>tidyverse</code>, <code>ggdag</code>:</p>
@@ -112,8 +157,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>We will cover some background theory, then we’ll launch into learning the approach with R. This course takes a philosophy of learning by doing, so we will mostly learn through doing the analyses.</p>
 </section>
-<section id="why-do-we-need-stuctural-causal-modelling" class="level3">
-<h3 class="anchored" data-anchor-id="why-do-we-need-stuctural-causal-modelling">Why do we need stuctural causal modelling?</h3>
+<section id="why-do-we-need-stuctural-causal-modelling" class="level3" data-number="1.2">
+<h3 data-number="1.2" class="anchored" data-anchor-id="why-do-we-need-stuctural-causal-modelling"><span class="header-section-number">1.2</span> Why do we need stuctural causal modelling?</h3>
 <p>A primary goal of science is to understand causes. Some contemporary examples in ecology and conservation include:</p>
 <p>What caused a fish population to collapse? Was it overfishing or climate change or both?</p>
 <p><a href="https://esajournals.onlinelibrary.wiley.com/doi/abs/10.1002/ecy.3070">Do ecosystem functions, like primary productivity, depend on species richness?</a></p>
@@ -130,8 +175,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>In ecology and conservation many questions we need answers to are not amenable to randomized experimental designs. We can go out in the real world and make observations. We can often randomize when or where we take observations (such as choosing meadows to sample at random). But we cannot randomize application of treatments. So we need another way to ask causal questions.</p>
 <p>Enter the logic of structural causal modelling.</p>
 </section>
-<section id="correlation-is-causation-with-some-conditions" class="level3">
-<h3 class="anchored" data-anchor-id="correlation-is-causation-with-some-conditions">Correlation is causation, with some conditions</h3>
+<section id="correlation-is-causation-with-some-conditions" class="level3" data-number="1.3">
+<h3 data-number="1.3" class="anchored" data-anchor-id="correlation-is-causation-with-some-conditions"><span class="header-section-number">1.3</span> Correlation is causation, with some conditions</h3>
 <p>Unfortunately we’ve had it drilled into our heads that correlation is not causation and we should never talk about causation when we are interpreting observational data.</p>
 <p>By observational data I mean any data you collect that is not from a manipulative experiment that has randomized application of treatments. In fact, there is a grey area here, because many manipulative experiments also suffer from issues of confounding, as we will see later.</p>
 <p>I’ve had numerous reviewers force me into softening language like: “fish biomass was higher in protected areas” or “greater warming caused faster rates of species migration”, into phrases like “fish biomass was associated with protection” or “greater warming was correlated with faster species migration”.</p>
@@ -148,24 +193,41 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Let’s get started</p>
 </section>
 </section>
-<section id="scm-101" class="level2">
-<h2 class="anchored" data-anchor-id="scm-101">SCM 101</h2>
+<section id="scm-101" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="scm-101"><span class="header-section-number">2</span> SCM 101</h2>
 <p>There are seven steps to SCM in ecology/conservation. My seven steps are <a href="https://esajournals.onlinelibrary.wiley.com/doi/abs/10.1002/ecm.1554">loosely based on five steps proposed by other authors</a>, with modifications based on my experience.</p>
 <p>There’s roughly two versions of SCM out there right now as well. What I call SCM Classic and SCM Comprehensive.</p>
-<p>The first five steps will lead us to a causal test of a particular relationship of interest, say do protected areas influence fish biomass? We then modify and repeat for different causes (step 6) or alternative hypotheses for the model (step 7). We will cover these:</p>
+<p>The first five steps will lead us to a causal test of a particular relationship of interest, say do protected areas influence fish biomass? We then modify and repeat for different causes (step 6) or alternative hypotheses for the model (step 7). Here are the steps:</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">SCM Comprehensive</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">SCM Classic</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <ol type="1">
-<li><strong>Create a conceptual model of your study system</strong></li>
-<li><strong>Choose a statistical test</strong></li>
-<li>Test consistency of your conceptual model with your data (optional)</li>
-<li><strong>Identify confounding variables of you need to adjust for when testing the cause of interest</strong></li>
-<li><strong>Test for causality with your statistical test</strong></li>
-<li><strong>Repeat steps 3-5 above for other causes of interest</strong></li>
+<li>Create a conceptual model of your study system</li>
+<li>Choose a statistical test</li>
+<li><strong>Test consistency of your conceptual model with your data (comprehensive only)</strong></li>
+<li>Identify confounding variables of you need to adjust for when testing the cause of interest</li>
+<li>Test for causality with your statistical test</li>
+<li>Repeat steps 3-5 above for other causes of interest</li>
 <li>Repeat steps 1-6 for other conceptual models</li>
 </ol>
-<p>We will cover steps 1,2,4,5,6 in this course. I call this approach that skips step 3 SCM Classic. You can add Step 3 for a full SCM-SEM approach “SCM Comprehensive”. SEM is already well covered <a href="https://jslefche.github.io/sem_book/index.html">elsewhere</a> so I will only cover it briefly here. Step 3 is also not essential for many applications of SCM, as we’ll see later.</p>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<ol type="1">
+<li>Create a conceptual model of your study system</li>
+<li>Choose a statistical test</li>
+<li>Identify confounding variables of you need to adjust for when testing the cause of interest</li>
+<li>Test for causality with your statistical test</li>
+<li>Repeat steps 3-5 above for other causes of interest</li>
+<li>Repeat steps 1-6 for other conceptual models</li>
+</ol>
+</div>
+</div>
+</div>
+<p>We will cover SCM Classic in this course. Step 3 of “SCM Comprehensive” requires structural equation modelling techniques. SEM is already well covered <a href="https://jslefche.github.io/sem_book/index.html">elsewhere</a> so I will only cover it briefly here.</p>
 </section>
-<section id="first-example" class="level2">
-<h2 class="anchored" data-anchor-id="first-example">First example</h2>
+<section id="first-example" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="first-example"><span class="header-section-number">3</span> First example</h2>
 <p>Let’s work through a complete example so you can see SCM in action. Then we will loop back and cover some more of the theory.</p>
 <p>We will work with data from <a href="https://royalsocietypublishing.org/doi/10.1098/rspb.2022.0348">Olivia King’s multi-stressor experiment</a> (King et al.&nbsp;2022). Olivia was interested how low light and diuron, a herbicide, interact to affect algae. She set up an experiment where algae were exposed to combinations of different light levels and diuron. Then at increments over 72 hours she measured chlorophyll-a fluorescence (an indicator of ability to photosynthesize) and cell density (an indicator of cell abundance).</p>
 <p>Our question here is how do diuron and light interact to affect fluorescence and cell density? Cell density should also be related to fluorescence, because cells with higher fluorescence should produce more energy for growth.</p>
@@ -173,8 +235,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Watch more <a href="https://www.youtube.com/watch?v=BA3wGE-0K8g">about the experiment</a></p>
 <iframe src="https://www.youtube.com/embed/BA3wGE-0K8g" data-external="1">
 </iframe>
-<section id="step-1-define-a-conceptual-model-a-dag" class="level3">
-<h3 class="anchored" data-anchor-id="step-1-define-a-conceptual-model-a-dag">Step 1 Define a conceptual model (a DAG)</h3>
+<section id="step-1-define-a-conceptual-model-a-dag" class="level3" data-number="3.1">
+<h3 data-number="3.1" class="anchored" data-anchor-id="step-1-define-a-conceptual-model-a-dag"><span class="header-section-number">3.1</span> Step 1 Define a conceptual model (a DAG)</h3>
 <p>Let’s define our conceptual model first. We don’t need any data to do this, just some knowledge of the system. Formally, our model needs to be a ‘DAG’ -&gt; Directed Acyclical Graph. This means it has nodes representing variables, arrows representing causes. The arrows are directional. Also there can be no cycles ie the graph can’t be recursive.</p>
 <p>We can represent our models as a series of formulas like normal R formulas. Then can check how it looks with the <code>ggdag</code> package:</p>
 <div class="cell">
@@ -230,12 +292,12 @@ Attaching package: 'ggdag'</code></pre>
 </div>
 <p>This abridged dataset only has measurements at the end of the experiment (72 hours), so we don’t need to consider time in our analysis.</p>
 </section>
-<section id="step-2-choose-a-statistical-test" class="level3">
-<h3 class="anchored" data-anchor-id="step-2-choose-a-statistical-test">Step 2 Choose a statistical test</h3>
+<section id="step-2-choose-a-statistical-test" class="level3" data-number="3.2">
+<h3 data-number="3.2" class="anchored" data-anchor-id="step-2-choose-a-statistical-test"><span class="header-section-number">3.2</span> Step 2 Choose a statistical test</h3>
 <p>Let’s work with general linear models for now. We will come back and fill in the modelling details later. For now, if you are not familiar with linear models, just know these are just simple regression models, but that allow for groups as inputs. We can implement them with the <code>lm</code> function in R.</p>
 </section>
-<section id="step-3-test-consistency-of-your-conceptual-model-with-your-data-optional" class="level3">
-<h3 class="anchored" data-anchor-id="step-3-test-consistency-of-your-conceptual-model-with-your-data-optional">Step 3 Test consistency of your conceptual model with your data (optional)</h3>
+<section id="step-3-test-consistency-of-your-conceptual-model-with-your-data-optional" class="level3" data-number="3.3">
+<h3 data-number="3.3" class="anchored" data-anchor-id="step-3-test-consistency-of-your-conceptual-model-with-your-data-optional"><span class="header-section-number">3.3</span> Step 3 Test consistency of your conceptual model with your data (optional)</h3>
 <p>This step basically amounts to testing whether our assumptions about the undrawn arrows are consistent with the patterns in the data.</p>
 <p>We won’t cover much of this step in this course, it would require another full day. This step basically amounts to structural equation modelling (SEM). But the theory you will learn in this course will help you understand structural equation modelling, because these models are also based on DAGs. But in brief, we can test whether our overall model structure is consistent with the data. The <code>piecewiseSEM</code> package is one way to do that. It asks whether there are any significant relationships in the data that aren’t explained by our DAG.</p>
 <p>If you want the code for this data it would look like this:</p>
@@ -249,8 +311,8 @@ Attaching package: 'ggdag'</code></pre>
 </div>
 <p>We will get from the summary an overall p-value telling us if the model is consistent with our data. Read more about SEM and piecewiseSEM in <a href="https://jslefche.github.io/sem_book/index.html">Jon Lefcheck’s live book</a> or the <a href="https://www.cambridge.org/core/books/cause-and-correlation-in-biology/247799189B31939D24BC0F61FD59E9BB">Bill Shipley book</a> and papers.</p>
 </section>
-<section id="step-4-identify-confounding-variables-of-you-need-to-adjust-for-when-testing-the-cause-of-interest" class="level3">
-<h3 class="anchored" data-anchor-id="step-4-identify-confounding-variables-of-you-need-to-adjust-for-when-testing-the-cause-of-interest">Step 4 Identify confounding variables of you need to adjust for when testing the cause of interest</h3>
+<section id="step-4-identify-confounding-variables-of-you-need-to-adjust-for-when-testing-the-cause-of-interest" class="level3" data-number="3.4">
+<h3 data-number="3.4" class="anchored" data-anchor-id="step-4-identify-confounding-variables-of-you-need-to-adjust-for-when-testing-the-cause-of-interest"><span class="header-section-number">3.4</span> Step 4 Identify confounding variables of you need to adjust for when testing the cause of interest</h3>
 <p>Now we get to the structural causal modelling. At this step we want to put quantities on the arrows we’ve drawn, and test the causes.</p>
 <p>Let’s look at an easy one first. How does light affect PI?</p>
 <p>We can add our paths of interest to our plot with <code>ggdag_paths</code>:</p>
@@ -286,8 +348,8 @@ Attaching package: 'ggdag'</code></pre>
 </div>
 <p>In this case conditioning on Diuron is optional. If we do that though we will get more power to detect a light effect, because conditioning on Diuron will help explain some of the residual variation.</p>
 </section>
-<section id="step-5-test-for-causality-with-your-statistical-test" class="level3">
-<h3 class="anchored" data-anchor-id="step-5-test-for-causality-with-your-statistical-test">Step 5 Test for causality with your statistical test</h3>
+<section id="step-5-test-for-causality-with-your-statistical-test" class="level3" data-number="3.5">
+<h3 data-number="3.5" class="anchored" data-anchor-id="step-5-test-for-causality-with-your-statistical-test"><span class="header-section-number">3.5</span> Step 5 Test for causality with your statistical test</h3>
 <p>Now we know what do condition on, we just run the tests, same as any old R regression we would have done. The minimal one first:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>mod_pi_min <span class="ot">&lt;-</span> <span class="fu">lm</span>(PI <span class="sc">~</span>Light,<span class="at">data =</span> king)</span>
@@ -345,8 +407,8 @@ F-statistic:  13.2 on 3 and 41 DF,  p-value: 3.594e-06</code></pre>
 </div>
 </div>
 </section>
-<section id="step-6-repeat-for-other-causes" class="level3">
-<h3 class="anchored" data-anchor-id="step-6-repeat-for-other-causes">Step 6 repeat for other causes</h3>
+<section id="step-6-repeat-for-other-causes" class="level3" data-number="3.6">
+<h3 data-number="3.6" class="anchored" data-anchor-id="step-6-repeat-for-other-causes"><span class="header-section-number">3.6</span> Step 6 repeat for other causes</h3>
 <p>So now we’ve seen how to applyl SCM to really obvious causal tests, let’s look at some more complex cases. A key difference with SCM and traditional ecostats is that we may have multiple different stats tests for the same variable. Each of these tests will be testing a different cause.</p>
 <p>Let’s look at lncelld.</p>
 <div class="cell">
@@ -535,16 +597,16 @@ F-statistic: 3.397 on 3 and 41 DF,  p-value: 0.02664</code></pre>
 <p>There is also the interaction to explain, but I’ll leave that there for today, read the paper if you want to know more.</p>
 </section>
 </section>
-<section id="break-for-diy-dag-session" class="level2">
-<h2 class="anchored" data-anchor-id="break-for-diy-dag-session">Break for DIY DAG session</h2>
+<section id="break-for-diy-dag-session" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="break-for-diy-dag-session"><span class="header-section-number">4</span> Break for DIY DAG session</h2>
 <p>Now we’ll break from R code to work on DAGs for your own system. If you are doing this in your own time then have a go at drawing a DAG for your own system and coding it up to plot in R.</p>
 </section>
-<section id="more-on-using-dags-to-identify-causal-tests" class="level2">
-<h2 class="anchored" data-anchor-id="more-on-using-dags-to-identify-causal-tests">More on using DAGs to identify causal tests</h2>
+<section id="more-on-using-dags-to-identify-causal-tests" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="more-on-using-dags-to-identify-causal-tests"><span class="header-section-number">5</span> More on using DAGs to identify causal tests</h2>
 <p>So the first part we got a basic overview of how SCM works, but I skimmed over a lot of details. Now you have the overview, let’s go back and fill in some more theory with specific case-studies.</p>
 <p>We won’t cover ever application of SCM, just give you an idea of what you can do. To learn more read the books by Pearl in the reference list.</p>
-<section id="how-manipulative-experiments-work-to-infer-causality" class="level3">
-<h3 class="anchored" data-anchor-id="how-manipulative-experiments-work-to-infer-causality">How manipulative experiments work to infer causality</h3>
+<section id="how-manipulative-experiments-work-to-infer-causality" class="level3" data-number="5.1">
+<h3 data-number="5.1" class="anchored" data-anchor-id="how-manipulative-experiments-work-to-infer-causality"><span class="header-section-number">5.1</span> How manipulative experiments work to infer causality</h3>
 <p>We saw an instance of confounding in King’s experiment, where the direct effect of diuron on cell density was confounded by its indirect effect via PI. In traditional statistics the only way we can infer causality is via a manipulative experiment (AKA randomized control design). King’s study was an experiment, so can’t we just use traditional stats to get at the causal direct effect of diuron?</p>
 <p>The answer is no, because we didn’t control PI, we only controlled light and diuron.</p>
 <p>If we were to do a controlled experiment to study the direct causal effect of diuron our DAG would look like this:</p>
@@ -566,8 +628,8 @@ F-statistic: 3.397 on 3 and 41 DF,  p-value: 0.02664</code></pre>
 <p>The approach we used above was also to ‘control’ for PI, but we used statistical control rather than experimental control. With statistical control we can use the data we have to make causal inferences, without artificially manipulating variables. Sometimes that is a better way to go.</p>
 <p>Statistical control really shines when we want to make causal inferences from observational data. So let’s look at an example of that next.</p>
 </section>
-<section id="confounding" class="level3">
-<h3 class="anchored" data-anchor-id="confounding">Confounding</h3>
+<section id="confounding" class="level3" data-number="5.2">
+<h3 data-number="5.2" class="anchored" data-anchor-id="confounding"><span class="header-section-number">5.2</span> Confounding</h3>
 <p>SCM provides a definition for confounding. Confounding confuses many people and many statisticians aren’t even clear on its definition. We saw an example above with PI being confounded Diuron. Confounding is common in field studies where we have much less control over the environment.</p>
 <p>Confounding means that two variables share a cause. This becomes a problem when we want to know the effect of each of those variables on an outcome.</p>
 <p>Imagine King et al.’s study was a field study measuring the same variables by in a real estuary. Then we might expect diuron and Light to be strongly correlated with each other, because light will drop and diuron will rise whenever rain washes sediment and pesticides off of farmlands. Then our DAG will look like this:</p>
@@ -586,8 +648,8 @@ F-statistic: 3.397 on 3 and 41 DF,  p-value: 0.02664</code></pre>
 <p>Diuron and light are confounded because of the shared cause - rainfall. So when we measure water quality in the estuary we will see diuron levels and light are correlated. This means if we see lower values of PI it will be hard for us to tell if that is caused by higher diuron or low light, because both occur together.</p>
 <p>King’s experiment removes the confounding having the experimenter randomly allocate flasks to diuron and light treatments. Let’s look at another example.</p>
 </section>
-<section id="an-urchin-case-study" class="level3">
-<h3 class="anchored" data-anchor-id="an-urchin-case-study">An urchin case-study</h3>
+<section id="an-urchin-case-study" class="level3" data-number="5.3">
+<h3 data-number="5.3" class="anchored" data-anchor-id="an-urchin-case-study"><span class="header-section-number">5.3</span> An urchin case-study</h3>
 <p>Let’s make up an example loosely based on a <a href="https://www.pnas.org/doi/10.1073/pnas.0907529106">case-study of sea urchins grazing kelp</a>.</p>
 <p>In our example we hypothesize that warmer ocean temperatures will have a negative effect on kelp. Kelp is measured as % cover on quadrats taken on Tasmania’s east coast. Urchin larvae are travelling in warming waters down to Tasmania. We hypothesize that survival of sea urchin larvae will be higher when ocean temperature is warmer. Then greater larval survival means more urchins recruiting to the benthos. more urchins = less kelp, because they eat kelp.</p>
 <p><img src="images/urchins.jpg" class="img-fluid"></p>
@@ -608,8 +670,8 @@ F-statistic: 3.397 on 3 and 41 DF,  p-value: 0.02664</code></pre>
 </div>
 </div>
 </section>
-<section id="statistical-control-applied-to-a-field-study" class="level3">
-<h3 class="anchored" data-anchor-id="statistical-control-applied-to-a-field-study">Statistical control applied to a field study</h3>
+<section id="statistical-control-applied-to-a-field-study" class="level3" data-number="5.4">
+<h3 data-number="5.4" class="anchored" data-anchor-id="statistical-control-applied-to-a-field-study"><span class="header-section-number">5.4</span> Statistical control applied to a field study</h3>
 <p>So we have data and a DAG. First step is to analyse the DAG with SCM. If we want to know if urchins are causing loss of kelp:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>urchinmod <span class="sc">%&gt;%</span> </span>
@@ -668,8 +730,8 @@ F-statistic: 3.397 on 3 and 41 DF,  p-value: 0.02664</code></pre>
 <p>We don’t need to control for any confounders, because we used the experimental manipulation to do that already.</p>
 <p>This case is simple enough that we don’t really need the DAG to figure out that climate is a confounder of kelp, and then what to do about the confounding. But in more complex cases our intuition may lead us astray. So we need to analyse a DAG.</p>
 </section>
-<section id="algorithms-for-identifying-adjustment-sets" class="level3">
-<h3 class="anchored" data-anchor-id="algorithms-for-identifying-adjustment-sets">Algorithms for identifying adjustment sets</h3>
+<section id="algorithms-for-identifying-adjustment-sets" class="level3" data-number="5.5">
+<h3 data-number="5.5" class="anchored" data-anchor-id="algorithms-for-identifying-adjustment-sets"><span class="header-section-number">5.5</span> Algorithms for identifying adjustment sets</h3>
 <p>The function <code>adjustmentSets</code> is applying an algorithm behind the scenes to determine what the adjustment sets are. This algorithm is called the back-door criteria and was developed using the logic of structural causal modelling. I recommend reading <a href="https://www.cambridge.org/core/books/causality/B0046844FAE10CBF274D4ACBDAEB5F5B">Pearl’s book</a> (or for a gentle introduction <a href="https://www.amazon.com.au/Book-Why-Science-Cause-Effect/dp/046509760X">read the pop science introduction to causality</a>) for more information on this logic, but here is a brief summary.</p>
 <p>One of the great insights of structural causal modelling is that normal algebra doesn’t cut it for causality. Consider the equation:</p>
 <p><code>kelp = b*urchins + c</code>. It says kelp cover is a function of a weight <code>b</code> times urchin density plus an intercept term (average kelp cover at zero urchins). The problem with normal rules of algebra is that it is ok to rearrange the equation: <code>urchins = (kelp - c)/b</code></p>
@@ -685,8 +747,8 @@ F-statistic: 3.397 on 3 and 41 DF,  p-value: 0.02664</code></pre>
 <p>One we know the adjustment sets then it is up to use to choose how to do those tests. The assumptions of those specific tests then apply. But SCM doesn’t care which one we choose.</p>
 <p>Let’s look at some more complex applications of SCM.</p>
 </section>
-<section id="missing-data" class="level3">
-<h3 class="anchored" data-anchor-id="missing-data">Missing data</h3>
+<section id="missing-data" class="level3" data-number="5.6">
+<h3 data-number="5.6" class="anchored" data-anchor-id="missing-data"><span class="header-section-number">5.6</span> Missing data</h3>
 <p>You may have noticed for kelp that the adjustment set could be either urchin larvae or temperature, not both. So if we won’t to know about how urchins affect kelp we don’t need to measure everything in our DAG. We just need to measure outcomes, a hypothesized causes and its adjustment sets. This can help you prioritise variables for a field study, or give you power to analyse questions others thought were impossible.</p>
 <p>Note that if you want to test whether you overall DAG is consistent with data (step 3 that I haven’t covered here), then you usually will need to have measured everything (though there are exceptions that structural equation modelling can deal with).</p>
 <p>The front door criteria is a good example of how we can overcome data gaps. The classic example is smoking as a cause of lung cancer. I’ll reframe that as an ecological example here.</p>
@@ -713,12 +775,12 @@ F-statistic: 3.397 on 3 and 41 DF,  p-value: 0.02664</code></pre>
 <p>In the case of this DAG, we can use the front-door instead. The front-door just says quantify all the direct paths. So we quantify larvae to urchins (e.g.&nbsp;correlation) then quantify urchins to kelp. Now the total effect of larvae on kelp is just the product of the two direct causes.</p>
 <p>The calculations for the front-door criteria rest on the maths of structural equation modelling, which I won’t go into any further here. See the references below if you are interested to learn more about this method.</p>
 </section>
-<section id="other-algorithms-for-identifying-adjustment-sets" class="level3">
-<h3 class="anchored" data-anchor-id="other-algorithms-for-identifying-adjustment-sets">Other algorithms for identifying adjustment sets</h3>
+<section id="other-algorithms-for-identifying-adjustment-sets" class="level3" data-number="5.7">
+<h3 data-number="5.7" class="anchored" data-anchor-id="other-algorithms-for-identifying-adjustment-sets"><span class="header-section-number">5.7</span> Other algorithms for identifying adjustment sets</h3>
 <p>There are three main algorithms for identifying adjustment sets: back-door criteria, front-door criteria, instrumental variables. The <code>adjustmentSets</code> functions uses the book-door criteria. It is worth learning the other two (see references below) so you have tools to solve problems when the book-door won’t work. There are also situations where none of the algorithms will work, but you still may be able to find a solution by applying the causal calculus by hand. This advanced topic is covered in the references.</p>
 </section>
-<section id="colliders" class="level3">
-<h3 class="anchored" data-anchor-id="colliders">Colliders</h3>
+<section id="colliders" class="level3" data-number="5.8">
+<h3 data-number="5.8" class="anchored" data-anchor-id="colliders"><span class="header-section-number">5.8</span> Colliders</h3>
 <p>Prepare yourself with coffee and sugar for one of the most confusing and difficult to understand aspects of causal logic: collider variables.</p>
 <p>We’ll step through a simple example to make this as easy as possible. But suffice to say collider variables are a logic that is very counter-intuitive to our simple human brains. This is exactly why we need SCM to help us understand and deal with them.</p>
 <p>We’ve already discussed two ways you can put three variables together in a DAG: mediation and correlation (confounding). The third is the collider. Let’s look at one.</p>
@@ -825,8 +887,8 @@ sample estimates:
 <p>The third general way collider bias could happen is just through the sloppy statistical practice of making ‘causal soups’ (McElreath). Casual soup is a multivariate regression where you just throw in every covariate you think could be vaguely important for your response variable. It’s the kind of practice that proponents of machine learning methods often encourage.</p>
 <p>If you try to interpret effects in these these causal soup models you are likely to run into issues with collider bias (and confounding).</p>
 </section>
-<section id="m-bias" class="level3">
-<h3 class="anchored" data-anchor-id="m-bias">M bias</h3>
+<section id="m-bias" class="level3" data-number="5.9">
+<h3 data-number="5.9" class="anchored" data-anchor-id="m-bias"><span class="header-section-number">5.9</span> M bias</h3>
 <p>Collider bias is a complex topic and we’ve only just scraped the surface. It’s worth mentioning that colliders come in many different coats. One of those is M bias:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb61"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggdag_m_bias</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -850,12 +912,12 @@ sample estimates:
 <p>The simulation we applied above is a useful tool to explore collider bias. If you think it may be an issue you can explore how much of an issue through a simulation study. This will help you figure out if your results will be robust to collider bias or not.</p>
 </section>
 </section>
-<section id="application-of-generalized-linear-models-in-scm" class="level2">
-<h2 class="anchored" data-anchor-id="application-of-generalized-linear-models-in-scm">Application of generalized linear models in SCM</h2>
+<section id="application-of-generalized-linear-models-in-scm" class="level2" data-number="6">
+<h2 data-number="6" class="anchored" data-anchor-id="application-of-generalized-linear-models-in-scm"><span class="header-section-number">6</span> Application of generalized linear models in SCM</h2>
 <p>Now let’s apply work through a full case-study and apply GLMs to the analysis.</p>
 <p><a href="https://www.seascapemodels.org/rstats/2018/01/19/intro-to-glms.html">If you need to quickly learn the basics of GLMs start here</a> then <a href="https://www.seascapemodels.org/rstats/2018/10/16/understanding-the-glm-link.html">read this article on link functions</a>.</p>
-<section id="gaussian-glm---urchin-larvea" class="level3">
-<h3 class="anchored" data-anchor-id="gaussian-glm---urchin-larvea">Gaussian GLM - urchin larvea</h3>
+<section id="gaussian-glm---urchin-larvae" class="level3" data-number="6.1">
+<h3 data-number="6.1" class="anchored" data-anchor-id="gaussian-glm---urchin-larvae"><span class="header-section-number">6.1</span> Gaussian GLM - urchin larvae</h3>
 <p>Now we’ll simulate some data that represents our urchin DAG. I’m going to add an extra twist and say urchin abundance also depends on the type of benthic structure (rock) which will be a categorical variable with two levels.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb63"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a>urchinmod <span class="ot">&lt;-</span> <span class="fu">dagify</span>(Kelp <span class="sc">~</span> Urchins <span class="sc">+</span> Temp, </span>
@@ -932,8 +994,8 @@ Number of Fisher Scoring iterations: 2</code></pre>
 </div>
 </div>
 </section>
-<section id="poisson-glm---urchin-abundance" class="level3">
-<h3 class="anchored" data-anchor-id="poisson-glm---urchin-abundance">Poisson GLM - urchin abundance</h3>
+<section id="poisson-glm---urchin-abundance" class="level3" data-number="6.2">
+<h3 data-number="6.2" class="anchored" data-anchor-id="poisson-glm---urchin-abundance"><span class="header-section-number">6.2</span> Poisson GLM - urchin abundance</h3>
 <p>Let’s add urchin adults to the simulated data:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb73"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb73-1"><a href="#cb73-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">105</span>)</span>
@@ -1001,8 +1063,8 @@ Number of Fisher Scoring iterations: 4</code></pre>
 </div>
 </div>
 </section>
-<section id="binomial-glm---kelp" class="level3">
-<h3 class="anchored" data-anchor-id="binomial-glm---kelp">Binomial GLM - Kelp</h3>
+<section id="binomial-glm---kelp" class="level3" data-number="6.3">
+<h3 data-number="6.3" class="anchored" data-anchor-id="binomial-glm---kelp"><span class="header-section-number">6.3</span> Binomial GLM - Kelp</h3>
 <p>Let’s add kelp now, assuming it was observed using method of point intersect transects (so counts out of 100</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb80"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb80-1"><a href="#cb80-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">5</span>)</span>
@@ -1112,8 +1174,8 @@ Urchins     -0.1450516 -0.1025890</code></pre>
 <p><img src="images/kelp.JPG" class="img-fluid"></p>
 <p><strong>Image:</strong> Kelp, sans urchins</p>
 </section>
-<section id="collider-example---effect-of-temp-on-urchins" class="level3">
-<h3 class="anchored" data-anchor-id="collider-example---effect-of-temp-on-urchins">Collider example - effect of Temp on urchins</h3>
+<section id="collider-example---effect-of-temp-on-urchins" class="level3" data-number="6.4">
+<h3 data-number="6.4" class="anchored" data-anchor-id="collider-example---effect-of-temp-on-urchins"><span class="header-section-number">6.4</span> Collider example - effect of Temp on urchins</h3>
 <p>Let’s do an example where we mistakenly condition on a collider.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb96"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb96-1"><a href="#cb96-1" aria-hidden="true" tabindex="-1"></a><span class="fu">adjustmentSets</span>(urchinmod, <span class="at">exposure =</span> <span class="st">"Temp"</span>, </span>
@@ -1189,8 +1251,8 @@ Temp         0.1695244 0.2603892</code></pre>
 <p>But urchins do eat kelp, and presumably this would mean they become more abundance. So how do we deal with predator-prey feedbacks in a DAG?<br>
 We can discuss in the workshop. It has to do with time-series.</p>
 </section>
-<section id="confounding-example---direct-effect-of-temp" class="level3">
-<h3 class="anchored" data-anchor-id="confounding-example---direct-effect-of-temp">Confounding example - direct effect of Temp</h3>
+<section id="confounding-example---direct-effect-of-temp" class="level3" data-number="6.5">
+<h3 data-number="6.5" class="anchored" data-anchor-id="confounding-example---direct-effect-of-temp"><span class="header-section-number">6.5</span> Confounding example - direct effect of Temp</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb112"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb112-1"><a href="#cb112-1" aria-hidden="true" tabindex="-1"></a><span class="fu">adjustmentSets</span>(urchinmod, <span class="at">exposure =</span> <span class="st">"Temp"</span>, </span>
 <span id="cb112-2"><a href="#cb112-2" aria-hidden="true" tabindex="-1"></a>               <span class="at">outcome =</span> <span class="st">"Kelp"</span>,</span>
@@ -1245,8 +1307,8 @@ Urchins     -0.1247373 -0.06902464</code></pre>
 <p>We can also block the indirect effect with ULarvae. Try this, what happens then? Why is the result different.</p>
 </section>
 </section>
-<section id="summary" class="level2">
-<h2 class="anchored" data-anchor-id="summary">Summary</h2>
+<section id="summary" class="level2" data-number="7">
+<h2 data-number="7" class="anchored" data-anchor-id="summary"><span class="header-section-number">7</span> Summary</h2>
 <p>So there’s a very brief overview of SCM and applications to designing studies and tests with GLMs.</p>
 <p>I’ve only brushed the surface here, to give you a taste of what SCM can do. I recommend checking out the reading below if you are interested to go further.</p>
 <p>SCM is a useful tool to use when designing any study and at the start of developing an analysis. Benefits of SCM include:</p>
@@ -1267,8 +1329,8 @@ Urchins     -0.1247373 -0.06902464</code></pre>
 <p>SCM is based on thorough logical reasoning of how to infer causes from correlations. It is just as thorough as traditional statistical practice. If you follow the rules of SCM then you can talk causally. So if if someone wants to criticize you for that, then you can politely refer them to the literature.</p>
 <p>If you follow SCM, a critic of your casual reasoning can really only attack it on the grounds that your DAG is wrong, or your tests are inappropriate (e.g.&nbsp;used gaussian when it should have been poisson, or linear instead of non-linear). So invite them to study your DAG and suggest alternative formulations.</p>
 </section>
-<section id="further-reading" class="level2">
-<h2 class="anchored" data-anchor-id="further-reading">Further reading</h2>
+<section id="further-reading" class="level2" data-number="8">
+<h2 data-number="8" class="anchored" data-anchor-id="further-reading"><span class="header-section-number">8</span> Further reading</h2>
 <ul>
 <li><p><a href="https://doi.org/10.1098/rspb.2022.0348">King et al.’s study of diuron and light effects on algae</a></p></li>
 <li><p>Review of SCM in Ecology: <a href="https://esajournals.onlinelibrary.wiley.com/doi/abs/10.1002/ecm.1554">Applying the structural causal model (SCM) framework for observational causal inference in ecology</a></p></li>
@@ -1515,6 +1577,22 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       });
     }
   }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+          // target, if specified
+          link.setAttribute("target", "_blank");
+          // default icon
+          link.classList.add("external");
+      }
+    }
 });
 </script>
 </div> <!-- /content -->

@@ -1,12 +1,20 @@
 ---
 title: "Introduction to structural causal modelling"
-format: html
+format: 
+  html:
+    toc: true
+    theme: superhero
+    toc-title: Navigation
+    number-sections: true
+    number-depth: 3
+    link-external-icon: true
+    link-external-newwindow: true
 editor: visual
 ---
 
-## Introduction to structural causal modelling
-
+::: {style="color: #9966ff;"}
 A/Prof Christopher J. Brown
+:::
 
 *Institute for Marine and Antarctic Studies, University of Tasmania, Australia*
 
@@ -96,17 +104,30 @@ There are seven steps to SCM in ecology/conservation. My seven steps are [loosel
 
 There's roughly two versions of SCM out there right now as well. What I call SCM Classic and SCM Comprehensive.
 
-The first five steps will lead us to a causal test of a particular relationship of interest, say do protected areas influence fish biomass? We then modify and repeat for different causes (step 6) or alternative hypotheses for the model (step 7). We will cover these:
+The first five steps will lead us to a causal test of a particular relationship of interest, say do protected areas influence fish biomass? We then modify and repeat for different causes (step 6) or alternative hypotheses for the model (step 7). Here are the steps:
 
-1.  **Create a conceptual model of your study system**
-2.  **Choose a statistical test**
-3.  Test consistency of your conceptual model with your data (optional)
-4.  **Identify confounding variables of you need to adjust for when testing the cause of interest**
-5.  **Test for causality with your statistical test**
-6.  **Repeat steps 3-5 above for other causes of interest**
+::: panel-tabset
+## SCM Comprehensive
+
+1.  Create a conceptual model of your study system
+2.  Choose a statistical test
+3.  **Test consistency of your conceptual model with your data (comprehensive only)**
+4.  Identify confounding variables of you need to adjust for when testing the cause of interest
+5.  Test for causality with your statistical test
+6.  Repeat steps 3-5 above for other causes of interest
 7.  Repeat steps 1-6 for other conceptual models
 
-We will cover steps 1,2,4,5,6 in this course. I call this approach that skips step 3 SCM Classic. You can add Step 3 for a full SCM-SEM approach "SCM Comprehensive". SEM is already well covered [elsewhere](https://jslefche.github.io/sem_book/index.html) so I will only cover it briefly here. Step 3 is also not essential for many applications of SCM, as we'll see later.
+## SCM Classic
+
+1.  Create a conceptual model of your study system
+2.  Choose a statistical test
+3.  Identify confounding variables of you need to adjust for when testing the cause of interest
+4.  Test for causality with your statistical test
+5.  Repeat steps 3-5 above for other causes of interest
+6.  Repeat steps 1-6 for other conceptual models
+:::
+
+We will cover SCM Classic in this course. Step 3 of "SCM Comprehensive" requires structural equation modelling techniques. SEM is already well covered [elsewhere](https://jslefche.github.io/sem_book/index.html) so I will only cover it briefly here.
 
 ## First example
 
@@ -713,7 +734,7 @@ Now let's apply work through a full case-study and apply GLMs to the analysis.
 
 [If you need to quickly learn the basics of GLMs start here](https://www.seascapemodels.org/rstats/2018/01/19/intro-to-glms.html) then [read this article on link functions](https://www.seascapemodels.org/rstats/2018/10/16/understanding-the-glm-link.html).
 
-### Gaussian GLM - urchin larvea
+### Gaussian GLM - urchin larvae
 
 Now we'll simulate some data that represents our urchin DAG. I'm going to add an extra twist and say urchin abundance also depends on the type of benthic structure (rock) which will be a categorical variable with two levels.
 
