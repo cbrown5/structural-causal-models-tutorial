@@ -12,7 +12,7 @@ format:
 editor: visual
 ---
 
-::: {style="color: #9966ff;"}
+::: {style="color: #66a3ff;"}
 A/Prof Christopher J. Brown
 :::
 
