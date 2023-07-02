@@ -20,6 +20,10 @@ A/Prof Christopher J. Brown
 
 2023-06-30
 
+TODO
+
+Step 3.6 - wrong model?
+
 ## Introduction
 
 ### What you need
@@ -393,6 +397,10 @@ There is also the interaction to explain, but I'll leave that there for today, r
 ## Break for DIY DAG session
 
 Now we'll break from R code to work on DAGs for your own system. If you are doing this in your own time then have a go at drawing a DAG for your own system and coding it up to plot in R.
+
+![](images/scm-handdrawn.jpg)
+
+**Image** A hand drawn DAG from our July 2023 workshop. Drawing your DAGs is a good way to start thinking about the variables and causes you want to represent
 
 ## More on using DAGs to identify causal tests
 
