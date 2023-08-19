@@ -20,10 +20,6 @@ A/Prof Christopher J. Brown
 
 2023-06-30
 
-TODO
-
-Step 3.6 - wrong model?
-
 ## Introduction
 
 ### What you need
